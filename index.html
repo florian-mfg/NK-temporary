@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>Nicolas Kawohl</title>
+    <style>
+      :root {
+        --background: #fff;
+        --foreground: #000;
+        --page-gap: 1.1vw;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        background: var(--background);
+        color: var(--foreground);
+        overflow: hidden;
+      }
+
+      body {
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      main {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        padding: var(--page-gap);
+        overflow: hidden;
+      }
+
+      .display,
+      .display:visited {
+        display: block;
+        width: max-content;
+        max-width: 100%;
+        color: inherit;
+        font-size: min(12.2vw, 14.5vh);
+        font-size: min(12.2vw, 14.5dvh);
+        font-weight: 400;
+        line-height: 0.93;
+        letter-spacing: -0.035em;
+        text-decoration: none;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+
+      a.display {
+        border-bottom: 0 solid transparent;
+      }
+
+      a.display:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 0.075em;
+        text-underline-offset: 0.03em;
+      }
+
+      a.display:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 5px;
+      }
+
+      .clock {
+        display: flex;
+        gap: 0.2em;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .ticker {
+        width: calc(100% + (2 * var(--page-gap)));
+        margin: 0.35rem calc(-1 * var(--page-gap)) 0.75rem;
+        overflow: hidden;
+        font-family: "Times New Roman", Times, serif;
+        font-size: clamp(0.75rem, 1.05vw, 1rem);
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .ticker-track {
+        display: flex;
+        width: max-content;
+        animation: move-right 100s linear infinite;
+      }
+
+      .ticker-group {
+        display: flex;
+        flex-shrink: 0;
+      }
+
+      .ticker span {
+        padding-right: 0.3em;
+      }
+
+      .mobile-ticker {
+        display: none;
+      }
+
+      .desktop-ticker {
+        display: none;
+      }
+
+      .hero-ticker {
+        display: block;
+        margin: 0 calc(-1 * var(--page-gap));
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: min(12.2vw, 14.5vh);
+        font-size: min(12.2vw, 14.5dvh);
+        font-weight: 400;
+        line-height: 0.93;
+        letter-spacing: -0.035em;
+      }
+
+      .hero-ticker span {
+        padding-right: 0.22em;
+      }
+
+      @keyframes move-right {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .ticker-track {
+          animation-play-state: paused;
+        }
+      }
+
+      @media (max-width: 600px) {
+        :root {
+          --page-gap: 10px;
+        }
+
+        .display,
+        .display:visited {
+          font-size: min(15.7vw, 10.8vh);
+          font-size: min(15.7vw, 10.8dvh);
+          line-height: 1.005;
+          letter-spacing: -0.025em;
+        }
+
+        a.display {
+          border-bottom-width: 0;
+          text-decoration: underline;
+          text-decoration-thickness: 0.075em;
+          text-underline-offset: 0.03em;
+        }
+
+        .desktop-ticker {
+          display: none;
+        }
+
+        .mobile-ticker {
+          display: none;
+        }
+
+        .hero-ticker {
+          display: block;
+          margin: 0 calc(-1 * var(--page-gap));
+          font-size: min(15.7vw, 10.8vh);
+          font-size: min(15.7vw, 10.8dvh);
+        }
+
+        .clock {
+          gap: 0.17em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="display">Nicolas</div>
+
+      <div class="ticker desktop-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="display">Kawohl</div>
+
+      <div class="ticker desktop-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="display" href="https://www.instagram.com/nicocaw/" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+      <div class="ticker desktop-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="display" href="mailto:info@meisnerfloriangestaltung.com">Mail</a>
+
+      <div class="ticker desktop-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+        </div>
+      </div>
+
+      <time class="display clock" id="clock" aria-label="Current time in Germany">
+        <span id="hours">00</span><span id="minutes">00</span><span id="seconds">00</span>
+      </time>
+
+      <div class="ticker desktop-ticker hero-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker mobile-ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+          <div class="ticker-group">
+            <span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span><span>NEW WEBSITE IN PROGRESS</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      const clock = document.querySelector("#clock");
+      const hours = document.querySelector("#hours");
+      const minutes = document.querySelector("#minutes");
+      const seconds = document.querySelector("#seconds");
+
+      const formatter = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Europe/Berlin",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false,
+      });
+
+      function updateClock() {
+        const parts = Object.fromEntries(
+          formatter.formatToParts(new Date()).map(({ type, value }) => [type, value]),
+        );
+
+        hours.textContent = parts.hour;
+        minutes.textContent = parts.minute;
+        seconds.textContent = parts.second;
+        clock.dateTime = `${parts.hour}:${parts.minute}:${parts.second}`;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>
